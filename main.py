@@ -1,9 +1,14 @@
 import argparse
-from load_data import load_eeg_data
-from preprocessing import preprocess_data
-from models import get_model
-from evaluation import evaluate_model
+# from load_data import load_eeg_data
+# from preprocessing import preprocess_data
+# from models import get_model
+# from evaluation import evaluate_model
 import torch
+
+from data_loaders.load_eeg_data import EEGDataLoader
+
+loader = EEGDataLoader()
+X_train, y_train, X_test, y_test = loader.load()
 
 def main():
     parser = argparse.ArgumentParser(
